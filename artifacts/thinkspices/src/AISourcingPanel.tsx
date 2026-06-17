@@ -385,7 +385,7 @@ export const AISourcingPanel: React.FC<AISourcingPanelProps> = ({
             <span className={`h-2 w-2 rounded-full ${agentStatus === "GEMINI" ? "bg-accent-gold" : "bg-accent-amber animate-pulse"}`}></span>
           </div>
           <span className="font-mono text-[9px] text-text-muted mt-0.5">
-            {agentStatus === "GEMINI" ? "● GEMINI 3.5 ACTIVE" : "⚠️ SECURE LOCAL AGENT"}
+            {agentStatus === "GEMINI" ? "● GEMINI 2.5-PRO ACTIVE" : "⚠️ SECURE LOCAL AGENT"}
           </span>
         </div>
         <button 

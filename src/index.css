@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* =========================================================
+ * MIG ECOSYSTEM — UNIFIED DESIGN SYSTEM
+ * Shared token layer for ThinkSpices, InTradeX, Landing Page
+ * ========================================================= */
+@theme {
+  --font-sans:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  /* ThinkSpices light palette (default) */
+  --color-bg-primary:       #f5f2ec;
+  --color-bg-secondary:     #ffffff;
+  --color-bg-tertiary:      #edeae2;
+  --color-bg-input:         #ffffff;
+  --color-border-default:   #d4cfc4;
+  --color-border-active:    #c8922a;
+
+  /* MIG brand */
+  --color-mig-navy:         #071A3D;
+  --color-mig-orange:       #F97316;
+
+  /* Accents */
+  --color-accent-gold:      #c8922a;
+  --color-accent-gold-soft: #e8b84b;
+  --color-accent-green:     #27ae60;
+  --color-accent-amber:     #f39c12;
+  --color-accent-red:       #e74c3c;
+  --color-accent-blue:      #3b82f6;
+  --color-accent-indigo:    #6366f1;
+  --color-accent-purple:    #8b5cf6;
+
+  /* Text */
+  --color-text-primary:     #1a1814;
+  --color-text-secondary:   #5a5245;
+  --color-text-muted:       #948e75;
+  --color-text-gold:        #c8922a;
+  --color-score-ring:       #c8922a;
+
+  /* Border Radius */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.625rem;
+  --radius-lg:   0.875rem;
+  --radius-card: 1rem;
+  --radius-xl:   1.5rem;
+  --radius-2xl:  2rem;
+
+  /* Typography Scale */
+  --text-display: 3rem;
+  --text-h1:      2rem;
+  --text-h2:      1.5rem;
+  --text-ds-body: 1rem;
+  --text-caption: 0.875rem;
+
+  /* Shadows — Light */
+  --shadow-ds-sm:
+    0 1px 3px 0   rgba(0,0,0,0.06),
+    0 1px 2px -1px rgba(0,0,0,0.04);
+  --shadow-ds-md:
+    0 4px 8px  -2px rgba(0,0,0,0.08),
+    0 2px 4px  -2px rgba(0,0,0,0.06);
+  --shadow-ds-lg:
+    0 12px 24px -4px rgba(0,0,0,0.10),
+    0 4px  8px  -4px rgba(0,0,0,0.06);
+}
+
+/* =========================================================
+ * RUNTIME CSS CUSTOM PROPERTIES
+ * ========================================================= */
+:root {
+  --mig-text-display:  3rem;
+  --mig-text-h1:       2rem;
+  --mig-text-h2:       1.5rem;
+  --mig-text-body:     1rem;
+  --mig-text-caption:  0.875rem;
+  --mig-leading-display: 1.1;
+  --mig-leading-h1:      1.2;
+  --mig-leading-h2:      1.3;
+  --mig-leading-body:    1.6;
+  --mig-leading-caption: 1.5;
+  --mig-space-2:  0.5rem;
+  --mig-space-4:  1rem;
+  --mig-space-6:  1.5rem;
+  --mig-space-8:  2rem;
+  --mig-space-12: 3rem;
+  --mig-space-16: 4rem;
+  --mig-radius: 1rem;
+  --mig-shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.04);
+  --mig-shadow-md: 0 4px 8px -2px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+  --mig-shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.10), 0 4px 8px -4px rgba(0,0,0,0.06);
+}
+
+/* =========================================================
+ * DARK MODE — ThinkSpices warm-dark
+ * ========================================================= */
+html.dark {
+  --color-bg-primary:       #0f0e0b;
+  --color-bg-secondary:     #1a1814;
+  --color-bg-tertiary:      #242018;
+  --color-bg-input:         #1a1814;
+  --color-border-default:   #3a3530;
+  --color-border-active:    #c8922a;
+  --color-text-primary:     #f5f2ec;
+  --color-text-secondary:   #cfc8b8;
+  --color-text-muted:       #948e75;
+  --mig-shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.30), 0 1px 2px -1px rgba(0,0,0,0.25);
+  --mig-shadow-md: 0 4px 8px -2px rgba(0,0,0,0.40), 0 2px 4px -2px rgba(0,0,0,0.30);
+  --mig-shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.50), 0 4px 8px -4px rgba(0,0,0,0.35);
+}
+
+/* =========================================================
+ * INTRADEX — Dark theme (always dark by default)
+ * ========================================================= */
+html[data-app="intradex"] {
+  --color-bg-primary:   #0F172A;
+  --color-bg-secondary: #161b27;
+  --color-bg-tertiary:  #1e2636;
+  --color-bg-input:     #1e2636;
+  --color-border-default: #2d3748;
+  --color-text-primary:   #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted:     #64748b;
+}
+html[data-app="intradex"].light-mode {
+  --color-bg-primary:   #f8fafc;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary:  #f1f5f9;
+  --color-bg-input:     #ffffff;
+  --color-border-default: #e2e8f0;
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #94a3b8;
+}
+
+/* =========================================================
+ * LANDING PAGE — always light
+ * ========================================================= */
+html[data-app="landing"],
+html[data-app="landing"].dark {
+  --color-bg-primary:     #f8fafc;
+  --color-text-primary:   #0f172a;
+  --color-bg-secondary:   #ffffff;
+  --color-text-secondary: #475569;
+}
+
+/* =========================================================
+ * BASE STYLES
+ * ========================================================= */
+html, body {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+  font-family: var(--font-sans);
+  font-size: var(--mig-text-body);
+  line-height: var(--mig-leading-body);
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-default) transparent;
+}
+
+/* =========================================================
+ * UTILITY CLASSES
+ * ========================================================= */
+.mig-display { font-size: var(--mig-text-display); line-height: var(--mig-leading-display); font-weight: 700; }
+.mig-h1 { font-size: var(--mig-text-h1); line-height: var(--mig-leading-h1); font-weight: 700; }
+.mig-h2 { font-size: var(--mig-text-h2); line-height: var(--mig-leading-h2); font-weight: 600; }
+.mig-body { font-size: var(--mig-text-body); line-height: var(--mig-leading-body); }
+.mig-caption { font-size: var(--mig-text-caption); line-height: var(--mig-leading-caption); }
+.mig-card { border-radius: var(--mig-radius); }
+.mig-shadow-sm { box-shadow: var(--mig-shadow-sm); }
+.mig-shadow-md { box-shadow: var(--mig-shadow-md); }
+.mig-shadow-lg { box-shadow: var(--mig-shadow-lg); }
+.shadow-ds-sm { box-shadow: var(--mig-shadow-sm); }
+.shadow-ds-md { box-shadow: var(--mig-shadow-md); }
+.shadow-ds-lg { box-shadow: var(--mig-shadow-lg); }
+.shadow-bento { box-shadow: var(--mig-shadow-md); }
+.shadow-indigo-glow { box-shadow: 0 10px 30px -10px rgba(200, 146, 42, 0.15); }
+
+/* =========================================================
+ * SCROLLBARS
+ * ========================================================= */
+::-webkit-scrollbar          { width: 6px; height: 6px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background-color: var(--color-border-default); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background-color: var(--color-accent-gold); }
+
+/* =========================================================
+ * TICKER MARQUEE
+ * ========================================================= */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+.animate-ticker-marquee:hover { animation-play-state: paused; }
+
+@keyframes bentoPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.95); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+.gold-terminal-dot { animation: bentoPulse 2.5s infinite ease-in-out; }
+
+/* Panel styles */
+.card-dark {
+  background-color: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-border-default) !important;
+  color: var(--color-text-primary) !important;
+}
+.panel-responsibility {
+  background-color: var(--color-bg-tertiary) !important;
+  border: 1px solid var(--color-accent-gold) !important;
+  color: var(--color-text-primary) !important;
+}
+.panel-responsibility .responsibility-item { color: var(--color-text-secondary) !important; }
+.text-muted { color: var(--color-text-secondary) !important; }
+
+/* Fade-in animation for toasts */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }

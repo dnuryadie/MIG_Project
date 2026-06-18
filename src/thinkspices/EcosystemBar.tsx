@@ -1,0 +1,1 @@
+Continue reading EcosystemBar.tsx from read output - content too large for this batch
